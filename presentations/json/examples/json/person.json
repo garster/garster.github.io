@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Leroy",
+  "Age": 25,
+  "Active": true,
+  "Address": {
+    "Street": "123 State St",
+    "City": "SB",
+    "State": "CA"
+  },
+  "FavoriteDeserts": [
+    "Mint Ice Cream",
+    "Cheesecake",
+    "Lemon Cake",
+    "Shortbread Cookies"
+  ],
+  "Generator": "Static File"
+}
