@@ -4,7 +4,7 @@
   "Active": true,
   "Address": {
     "Street": "123 State St",
-    "City": "SB",
+    "City": "Santa Barbara",
     "State": "CA"
   },
   "FavoriteDesserts": [
@@ -13,5 +13,5 @@
     "Lemon Cake",
     "Shortbread Cookies"
   ],
-  "Generator": "Static File"
+  "Generator": "Static JSON"
 }
