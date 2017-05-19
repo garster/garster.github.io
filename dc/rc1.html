@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiningCam</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <style>
+    .center-block {
+      float: none;
+    }
+
+    .image-container {
+      max-width: 640px;
+      position: relative;
+    }
+
+    .image-container i {
+      color: #fff;
+      z-index: 100;
+      position: absolute;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+    .image-container .fa-play {
+      font-size: 200px;
+      opacity: 0.5;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .image-container .fa-pause {
+      font-size: 25px;
+      opacity: 0.75;
+      left: 10px;
+      top: 10px;
+    }
+
+    .image-container h2 {
+      font-family: 'Cabin', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      opacity: 0.75;
+      margin-top: 10px;
+      z-index: 100;
+      position: absolute;
+      right: 25px;
+      top: 0;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+  </style>
+</head>
+<body style="margin-top: 25px;">
+  <div class="image-container center-block">
+    <img id="cam1" data-dc="ortega" class="img-rounded" src="https://appl.housing.ucsb.edu/api/dining/cam/ortega/snapshot">
+     <h2>Ortega</h2>
+    <i class="fa fa-play"></i>
+    <i class="fa fa-pause"></i>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script>
+    var playing = false;
+    $('.fa-pause').hide();
+
+    var dc = $('#cam1').data('dc');
+
+    var baseApiUrl = 'https://appl.housing.ucsb.edu/api/dining/cam/';
+    var v = baseApiUrl + dc;
+    var s = baseApiUrl + dc + '/snapshot';
+
+    $("#cam1, .fa").on('click', function() {
+
+      // src = (flag)? true:false;
+      $("#cam1").attr("src", (playing) ? s + '?='+ new Date().getTime() : v);
+      playing = !playing;
+      $(".fa-play").toggle();
+      $(".fa-pause").toggle();
+    });
+
+  </script>
+</body>
+</html>
