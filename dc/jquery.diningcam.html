@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dining Cam Test</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="jquery.diningcam.css">
+</head>
+
+<body>
+  <div class="dining-cam" data-dining-common="ortega" data-timeout="10"></div>
+  <div class="dining-cam" data-dining-common="carrillo" data-timeout="30"></div>
+  <div class="dining-cam" data-dining-common="dlg" data-timeout="60"></div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="jquery.diningcam.js"></script>
+    <script>
+      $('.dining-cam').diningcam();
+    </script>
+</body>
+
+</html>
